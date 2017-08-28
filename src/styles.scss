@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+h1 {
+    font-size: inherit;
+}
+
+span.order {
+    color: #666;
+}
+
+div.order {
+    float: right;
+    padding-right: 1px;
+}
+
+button {
+    WIDTH: 70%;
+    HEIGHT: 3%;
+}
+
+button.back {
+    background-color: grey;
+}
+
+img {
+    width: 50%;
+}
+
+.user{
+    text-align: right;
+}

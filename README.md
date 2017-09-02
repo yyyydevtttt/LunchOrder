@@ -26,3 +26,20 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## OnsenUI を使うための設定
+【参考】
+https://ja.onsen.io/v2/guide/angular2/index.html#angular-2
+
+(1) プロジェクトのフォルダの下で以下のコマンドを実行
+
+　npm install onsenui ngx-onsenui --save
+
+(2) .angular-cli.json に以下の文を追加
+※ 読み込む順番が大事っぽいから、この順番を変えない！
+
+      "styles": [
+        "../node_modules/onsenui/css/onsenui.css",
+        "../node_modules/onsenui/css/onsen-css-components.css",
+        "styles.scss"
+      ],

@@ -1,3 +1,71 @@
-<p>
-  hotmot works!
-</p>
+<div class="left">
+  <button (click)="back()">戻る</button></div>
+<!-- <div class="center">ほっともっと</div> -->
+<div class="center">{{pageTitle}}</div>
+<div class="right">****さん</div>
+
+<div style="text-align: center">
+  <h1>注文内容の入力</h1>
+</div>
+<div>
+  <!--     <div><div ng-controller="Page1Ctrl"> -->
+    
+  <span class="order">日付</span>
+  <div class="order">
+    <input id="DATE" ng-model="ddate" type="date" name="example2">
+  </div>
+  <span class="order">メニュー</span>
+  <div class="order">
+    <select id="MENU" ng-model="dmenu" ng-options="dMenu.value for dMenu in dMenus"></select>
+  </div>
+  <span class="order">ご飯のサイズ</span>
+  <div class="order">
+    <select id="SIZE" ng-model="dsize" ng-options="dSize.value for dSize in dSizes"></select>
+  </div>
+  <span class="order">個数</span>
+  <div class="order">
+    <select id="NUMBER" ng-model="dnumber" ng-options="dNumber.value for dNumber in dNumbers"></select>
+  </div>
+  <span class="order">合計金額</span>
+  <div class="order">
+    <span class="order">{{getPayment() + getSize().price | number}}円</span>
+  </div>
+
+</div>
+<br />
+<div style="text-align: center">
+  <button (click)="next()">注文確認</button>
+</div>
+<br />
+<div style="text-align: center">
+  <button (click)="check()">デバッグボタン</button>
+</div>
+
+
+<!--
+          <ons-list-item>
+          <ons-row>
+          <ons-col width="15%">
+              <span class="order">ご飯</span></ons-col>
+              <ons-col>
+              <div class="order">
+                  <label class="radio-button">
+                      <input id={{dSizes[2].value}} type="radio" name="rice" value="l">
+                      <div class="radio-button__checkmark"></div>
+                      {{dSizes[2].value}}
+                  </label>
+                  <label class="radio-button">
+                      <input id={{dSizes[1].value}} type="radio" name="rice" value="m" checked="checked">
+                      <div class="radio-button__checkmark"></div>
+                      {{dSizes[1].value}}
+                  </label>
+                  <label class="radio-button">
+                      <input id={{dSizes[0].value}} type="radio" name="rice" value="s">
+                      <div class="radio-button__checkmark"></div>
+                      {{dSizes[0].value}}
+                  </label>
+              </div>
+          </ons-col>
+          </ons-row>
+          </ons-list-item>
+  -->

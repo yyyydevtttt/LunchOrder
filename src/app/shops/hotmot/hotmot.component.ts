@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotmotComponent implements OnInit {
 
+//  const 
+
+
   constructor() { }
 
   ngOnInit() {

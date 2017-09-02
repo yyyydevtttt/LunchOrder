@@ -1,36 +1,26 @@
-<!-- <ons-page>
-  <ons-toolbar>
-      <div class="center">ホーム</div>
-      <div class="right">いそださん</div>
-  </ons-toolbar>
+<div class="home-wrapper" style="text-align: center" ng-controller="HomeCtrl">
 
-  <div style="text-align: center" ng-controller="HomeCtrl">
-      <h1>
-        お弁当申込み
-      </h1>
-      <img src="../../assets/image/obentou.png" title="お弁当のイラスト">
-      <ons-button class="home">
-          ほっともっと
-      </ons-button>
-      <ons-button class="home">
-          がっつり亭
-      </ons-button>
-      <ons-button class="home">
-          注文履歴
-      </ons-button>
-  </div>      
-</ons-page> -->
+  <div class="title-wrapper">
+    <h1>お弁当申込み</h1>
+    <img class="title-image" src="../../assets/image/obentou.png" title="お弁当のイラスト">
+  </div>
 
-<div style="text-align: center">
-    <h1>お弁当申込み(Home)</h1>
-  <img src="../../assets/image/obentou.png" title="お弁当のイラスト">
-  <br>
-  <br>
-  <a class="home" routerLink="shops/hotmot">ほっともっと</a>
-  <br>
-  <br>
-  <a class="home" routerLink="shops/gattsuri">がっつり亭</a>
-  <br>
-  <br>
-  <a class="home" routerLink="">注文確認</a>
+  <div class="menu-wrapper">
+    <div class="item-list">
+      <!-- <h2 class="item-title"> 注文する </h2> -->
+      <ons-button class="button" routerLink="shops/hotmot">
+        ほっともっと
+      </ons-button>
+      <ons-button class="button" routerLink="shops/gattsuri">
+        がっつり亭
+      </ons-button>
+    </div>
+    <div class="item-list">
+      <!-- <h2 class="item-title"> 過去の注文を確認する </h2> -->
+      <ons-button class="button">
+        注文履歴確認
+      </ons-button>
+    </div>
+  </div>
+
 </div>

@@ -1,0 +1,25 @@
+.title-wrapper {
+  margin-top: 50px;
+  & h1 {
+    font-size: 25px;
+  }
+  .title-image {
+    margin-top: -30px;
+    width: 50%;
+  }
+}
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  .item-list {
+    // margin: 5px 0 0 0;
+    .item-title {
+      font-size: 20px;
+    }
+    .button {
+      width: 50%;
+      margin: 5px auto;
+    }
+  }
+}

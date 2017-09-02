@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<!-- <html lang="en">
 <head>
   <meta charset="utf-8">
   <title>LunchOrder</title>
@@ -10,8 +10,37 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+</head> -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>LunchOrder</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.css" />
+  <script src="https://unpkg.com/onsenui/js/onsenui.js"></script>
+  <script>
+    var module = ons.bootstrap('my-app', ['onsen']);
+    module.controller('AppController', function ($scope) {});
+    module.controller('PageController', function ($scope) {
+      ons.ready(function () {
+        // Init code here
+      });
+    });
+
+  </script>
 </head>
+
 <body>
-  <app-root></app-root>
+  <ons-navigator>
+    <ons-page>
+      <app-root></app-root>
+    </ons-page>
+  </ons-navigator>
 </body>
+
 </html>

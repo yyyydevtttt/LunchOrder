@@ -1,0 +1,42 @@
+<div style="text-align: center">
+  <h1>注文内容の入力</h1>
+</div>
+
+<form class="form" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <span class="order">日付</span>
+  <div class="order">
+    <input class="" type="date" name="ddate" ngModel required placeholder="">
+  </div>
+  <span class="order">メニュー</span>
+  <div class="order">
+    <select class="" name="menuList" ngModel required>
+        <option *ngFor="let dmenu of dmenus; let i = index" [ngValue]="dmenu">
+          {{dmenu.value}}
+        </option>
+      </select>
+  </div>
+  <span class="order">ご飯のサイズ</span>
+  <div class="order">
+    <select class="" name="sizeList" ngModel required>
+        <option *ngFor="let dsize of dsizes; let i = index" [ngValue]="dsize">
+          {{dsize.value}}
+        </option>
+      </select>
+  </div>
+  <span class="order">個数</span>
+  <div class="order">
+    <select class="" name="numberList" ngModel required>
+        <option *ngFor="let dnumber of dnumbers; let i = index" [ngValue]="dnumber">
+          {{dnumber.value}}
+        </option>
+      </select>
+  </div>
+  <span class="order">合計金額</span>
+  <div class="order">
+    <span class="order">{{getPayment(f) | number}}</span>
+    <span class="order">円</span>
+  </div>
+
+  <button type="submit" [disabled]="!f.form.valid">注文確認</button>
+  <button (click)="check(f)">デバッグボタン</button>
+</form>

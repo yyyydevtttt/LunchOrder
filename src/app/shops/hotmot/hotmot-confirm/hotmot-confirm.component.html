@@ -1,0 +1,9 @@
+<div style="text-align: center">
+  <h1>注文内容の確認</h1>
+</div>
+
+<app-hotmot-list [orderList]="orderList"></app-hotmot-list>
+
+<button (click)="goBack()">続けて注文</button>
+<button (click)="submit()">注文確定</button>
+<button (click)="cancel()">キャンセル</button>

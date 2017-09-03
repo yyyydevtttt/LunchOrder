@@ -1,0 +1,27 @@
+<div *ngFor="let order of orderList; let i = index">
+  <app-hotmot-detail
+    [rownum]="i"
+    [order]="order">
+  </app-hotmot-detail>
+</div>
+
+
+
+<!--
+
+  <app-hotmot-detail
+    *ngIf="!edit[i]"
+    [rownum]="i"
+    [order]="order"
+    (click)="onClick(i)">
+  </app-hotmot-detail>
+  <app-hotmot-update
+    *ngIf="edit[i]"
+    [rownum]="i"
+    [order]="order"
+    (submitLifeEvent)="changeEvent()">
+  </app-hotmot-update>
+
+
+
+-->

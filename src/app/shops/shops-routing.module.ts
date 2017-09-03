@@ -6,7 +6,7 @@ import { ShopsComponent } from "./shops.component";
 
 const routes: Routes = [
   { path: '', component: ShopsComponent, pathMatch: 'full' },
-  { path: 'hotmot', component: HotmotComponent, pathMatch: 'full' },
+  { path: 'hotmot', loadChildren: './hotmot/hotmot.module#HotmotModule' },
   { path: 'gattsuri', component: GattsuriComponent, pathMatch: 'full' }
 ];
 

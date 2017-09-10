@@ -35,9 +35,10 @@ export class HotmotInputComponent implements OnInit {
     const order: Order = {
       omise: this.pageTitle,
       menu: form.value.menuList.value,
+      size: form.value.sizeList.value,
       count: form.value.numberList.value,
       price: Number(this.getPayment(form)),
-      date: new Date(form.value.ddate)
+      order_date: new Date(form.value.ddate)
     };
 
     this.orderService.add(order);

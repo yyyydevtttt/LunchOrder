@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { OrderService } from "./shared/service/order.service";
 import { HistoryComponent } from './history/history.component';
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HistoryComponent } from './history/history.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [
     OrderService

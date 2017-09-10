@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "http://tk2-252-35568.vs.sakura.ne.jp:3000/",
+      "secure": false
+    }
+  }
+  

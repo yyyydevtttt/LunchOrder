@@ -38,9 +38,10 @@ export class HotmotUpdateComponent implements OnInit {
     const order: Order = {
       omise: this.order.omise,
       menu: form.value.menuList.value,
+      size: form.value.dsize.value,
       count: form.value.numberList.value,
       price: Number(this.getPayment(form)),
-      date: new Date(form.value.ddate)
+      order_date: new Date(form.value.ddate)
     };
 
     this.orderService.update(this.rownum, order);

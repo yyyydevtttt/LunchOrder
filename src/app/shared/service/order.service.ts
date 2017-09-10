@@ -9,19 +9,21 @@ import { MenuItem } from "../component/menu.item";
 import { HotmotItem } from "../component/hotmot.item";
 import { Order } from "./order";
 import { OrderInsertInfo } from "./orderInsertInfo";
+import { OrderSelectInfo } from "./orderSelectInfo";
 
 @Injectable()
 export class OrderService {
 
-  headers = new Headers({'Content-Type': 'application/json'});
-  url = 'http://tk2-252-35568.vs.sakura.ne.jp:3000/api/order';
+  private headers = new Headers({'Content-Type': 'application/json'});
+  private url = 'http://tk2-252-35568.vs.sakura.ne.jp:3000/api/order';
   
-  hnumbers: NumberItem[];
-  hmenus: MenuItem[];
-  hsizes: MenuItem[];
-  hotmotItem: HotmotItem = new HotmotItem();
+  private hnumbers: NumberItem[];
+  private hmenus: MenuItem[];
+  private hsizes: MenuItem[];
+  private hotmotItem: HotmotItem = new HotmotItem();
 
-  orderLists: Order[];
+  private orderLists: Order[];
+  private orderHistorys: OrderSelectInfo[];
   
   constructor(private http: Http) {
     this.orderLists = [];
@@ -56,6 +58,10 @@ export class OrderService {
     return this.orderLists;
   }
 
+  get orderHistory() {
+    return this.orderHistorys;
+  }
+
   orderClear() {
     this.orderLists = [];
   }
@@ -88,6 +94,18 @@ export class OrderService {
     .toPromise()
     // .then(() => this.issues.push(issue))
     .catch(this.handleError);
+  }
+
+  selectHistory(order_user_id: string): Promise<OrderSelectInfo[]> {
+    let tmpUrl = this.url + '/history';
+    return this.http.post(tmpUrl, JSON.stringify({order_user_id: order_user_id}), { headers: this.headers })
+      .toPromise()
+      .then(response => {
+        this.orderHistorys = response.json().resultList;
+        console.log('service log:', this.orderHistorys[0]);
+        return this.orderHistorys;
+      })
+      .catch(this.handleError);
   }
 
   getMySQLDate(tmpDate: Date) {

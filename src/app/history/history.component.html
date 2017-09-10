@@ -1,18 +1,24 @@
-<div *ngFor="let order of orderList; let i = index">
+<div *ngFor="let order of orderHistorys; let i = index">
+  <span class="">注文番号</span>
+  <span class="">{{order.ORDER_ID}}</span>
+  <br>
   <span class="">お店</span>
-  <span class="">{{order.omise}}</span>
+  <span class="">{{order.OMISE}}</span>
   <br>
   <span class="">メニュー</span>
-  <span class="">{{order.menu}}</span>
+  <span class="">{{order.MENU}}</span>
+  <br>
+  <span class="">サイズ</span>
+  <span class="">{{order.SIZE}}</span>
   <br>
   <span class="">個数</span>
-  <span class="">{{order.count}}</span>
+  <span class="">{{order.COUNT}}</span>
   <br>
   <span class="">値段</span>
-  <span class="">{{order.price}}</span>
+  <span class="">{{order.PRICE}}</span>
   <br>
   <span class="">注文日</span>
-  <span class="">{{order.date}}</span>
+  <span class="">{{order.ORDER_DATE}}</span>
 </div>
 
 <button (click)="gotoHome()">ホームに戻る</button>

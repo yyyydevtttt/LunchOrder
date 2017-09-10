@@ -48,6 +48,7 @@ export class HotmotConfirmComponent implements OnInit {
       }
       this.orderService.orderInsert(this.orderInsertInfo);
     }
+    this.orderService.orderClear();
     this.router.navigate(['/history']);    
   }
 

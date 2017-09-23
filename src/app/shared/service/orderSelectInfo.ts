@@ -6,5 +6,5 @@ export class OrderSelectInfo {
     count: number;
     price: number;
     order_user_id: string;
-    order_date: Date;   
+    order_date: Date;
 }

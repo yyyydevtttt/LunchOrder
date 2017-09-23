@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { NgForm } from '@angular/forms';
 import { Headers, Http } from '@angular/http';
+// tslint:disable-next-line:import-blacklist
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
 
-import { NumberItem } from "../component/number.item";
-import { MenuItem } from "../component/menu.item";
-import { HotmotItem } from "../component/hotmot.item";
-import { Order } from "./order";
-import { OrderInsertInfo } from "./orderInsertInfo";
-import { OrderSelectInfo } from "./orderSelectInfo";
+import { NumberItem } from '../component/number.item';
+import { MenuItem } from '../component/menu.item';
+import { HotmotItem } from '../component/hotmot.item';
+import { Order } from './order';
+import { OrderInsertInfo } from './orderInsertInfo';
+import { OrderSelectInfo } from './orderSelectInfo';
 
 @Injectable()
 export class OrderService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private url = 'http://tk2-252-35568.vs.sakura.ne.jp:3000/api/order';
-  
+
   private hnumbers: NumberItem[];
   private hmenus: MenuItem[];
   private hsizes: MenuItem[];
@@ -24,7 +25,7 @@ export class OrderService {
 
   private orderLists: Order[];
   private orderHistorys: OrderSelectInfo[];
-  
+
   constructor(private http: Http) {
     this.orderLists = [];
     this.hnumbers = this.hotmotItem.dnumber;
@@ -89,7 +90,7 @@ export class OrderService {
   }
 
   orderInsert(orderInsertInfo: OrderInsertInfo) {
-    let tmpUrl = this.url + '/confirm';
+    const tmpUrl = this.url + '/confirm';
     this.http.post(tmpUrl, JSON.stringify(orderInsertInfo), { headers: this.headers })
     .toPromise()
     // .then(() => this.issues.push(issue))
@@ -97,7 +98,7 @@ export class OrderService {
   }
 
   selectHistory(order_user_id: string): Promise<OrderSelectInfo[]> {
-    let tmpUrl = this.url + '/history';
+    const tmpUrl = this.url + '/history';
     return this.http.post(tmpUrl, JSON.stringify({order_user_id: order_user_id}), { headers: this.headers })
       .toPromise()
       .then(response => {
@@ -109,12 +110,12 @@ export class OrderService {
   }
 
   getMySQLDate(tmpDate: Date) {
-    let datetime = String(tmpDate.getFullYear()) + '-' 
-                   + String(tmpDate.getMonth()+101).substr(1,2) + '-' 
-                   + String(tmpDate.getDate()+100).substr(1,2) + ' '
-                   + String(tmpDate.getHours()+100).substr(1,2) + ':' 
-                   + String(tmpDate.getMinutes()+100).substr(1,2) + ':' 
-                   + String(tmpDate.getSeconds()+100).substr(1,2);
+    const datetime = String(tmpDate.getFullYear()) + '-'
+                   + String(tmpDate.getMonth() + 101).substr(1, 2) + '-'
+                   + String(tmpDate.getDate() + 100).substr(1, 2) + ' '
+                   + String(tmpDate.getHours() + 100).substr(1, 2) + ':'
+                   + String(tmpDate.getMinutes() + 100).substr(1, 2) + ':'
+                   + String(tmpDate.getSeconds() + 100).substr(1, 2);
     return datetime;
   }
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from "../../../shared/service/order";
-import { OrderService } from "../../../shared/service/order.service";
+import { Order } from '../../../shared/service/order';
+import { OrderService } from '../../../shared/service/order.service';
 import { Location } from '@angular/common';
-import { Router } from "@angular/router";
-import { OrderInsertInfo } from "../../../shared/service/orderInsertInfo";
+import { Router } from '@angular/router';
+import { OrderInsertInfo } from '../../../shared/service/orderInsertInfo';
 
 
 @Component({
@@ -45,21 +45,13 @@ export class HotmotConfirmComponent implements OnInit {
         order_date: this.orderService.getMySQLDate(
             this.orderList[i].order_date
         )
-      }
+      };
       this.orderService.orderInsert(this.orderInsertInfo);
     }
     this.orderService.orderClear();
-    this.router.navigate(['/history']);    
+    this.router.navigate(['/history']);
   }
 
 }
 
 
-/*
-        omise: this.orderList[i].omise,
-        menu: this.orderList[i].menu,
-        size: this.orderList[i].size,
-        count: this.orderList[i].count,
-        price: this.orderList[i].price,
-
-*/

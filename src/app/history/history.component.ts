@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from "../shared/service/order.service";
-import { Order } from "../shared/service/order";
-import { Router } from "@angular/router";
+import { OrderService } from '../shared/service/order.service';
+import { Order } from '../shared/service/order';
+import { Router } from '@angular/router';
 
-import { OrderSelectInfo } from "../shared/service/orderSelectInfo";
+import { OrderSelectInfo } from '../shared/service/orderSelectInfo';
 
 @Component({
   selector: 'app-history',

@@ -1,5 +1,5 @@
-import { MenuItem } from "../../shared/component/menu.item";
-import { NumberItem } from "../../shared/component/number.item";
+import { MenuItem } from '../../shared/component/menu.item';
+import { NumberItem } from '../../shared/component/number.item';
 
 export class HotmotItem {
 
@@ -14,7 +14,7 @@ export class HotmotItem {
         {id: '7', value: 7},
         {id: '8', value: 8},
         {id: '9', value: 9}
-    ]; 
+    ];
 
     // メニュー
     dmenu: MenuItem[] = [
@@ -41,12 +41,12 @@ export class HotmotItem {
         {id: '21', value: 'ビーフカレー(ルーのみ)', price: 360},
         {id: '22', value: 'ロースカツカレー', price: 650}
     ];
-    
+
     // サイズ
     dsize: MenuItem[] = [
-        {id: '1', value: '小', price: -20}, 
+        {id: '1', value: '小', price: -20},
         {id: '2', value: '普通', price: 0},
         {id: '3', value: '大', price: 50}
     ];
-    
+
 }

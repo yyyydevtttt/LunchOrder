@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Order } from "../../../shared/service/order";
-import { NumberItem } from "../../../shared/component/number.item";
-import { MenuItem } from "../../../shared/component/menu.item";
-import { Router } from "@angular/router";
-import { OrderService } from "../../../shared/service/order.service";
-import { NgForm } from "@angular/forms";
+import { Order } from '../../../shared/service/order';
+import { NumberItem } from '../../../shared/component/number.item';
+import { MenuItem } from '../../../shared/component/menu.item';
+import { Router } from '@angular/router';
+import { OrderService } from '../../../shared/service/order.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-hotmot-update',
@@ -17,7 +17,7 @@ export class HotmotUpdateComponent implements OnInit {
   rownum: number;
   @Input()
   order: Order;
-  
+
   dnumbers: NumberItem[];
   dmenus: MenuItem[];
   dsizes: MenuItem[];

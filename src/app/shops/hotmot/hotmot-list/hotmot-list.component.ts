@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Order } from "../../../shared/service/order";
+import { Order } from '../../../shared/service/order';
 
 @Component({
   selector: 'app-hotmot-list',

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Order } from "../../../shared/service/order";
-import { OrderService } from "../../../shared/service/order.service";
-import { Router } from "@angular/router";
+import { Order } from '../../../shared/service/order';
+import { OrderService } from '../../../shared/service/order.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hotmot-detail',
@@ -32,12 +32,12 @@ export class HotmotDetailComponent implements OnInit {
     if (this.orderService.orderList.length === 0) {
       this.router.navigate(['/']);
     } else {
-      this.router.navigate(['/shops/hotmot/confirm']);      
+      this.router.navigate(['/shops/hotmot/confirm']);
     }
   }
 
   update() {
-    
+
   }
 
 }

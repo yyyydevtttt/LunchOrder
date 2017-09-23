@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NumberItem } from "../../../shared/component/number.item";
-import { MenuItem } from "../../../shared/component/menu.item";
-import { HotmotItem } from "../../../shared/component/hotmot.item";
-import { NgForm } from "@angular/forms";
-import { OrderService } from "../../../shared/service/order.service";
-import { Router } from "@angular/router";
-import { Order } from "../../../shared/service/order";
+import { NumberItem } from '../../../shared/component/number.item';
+import { MenuItem } from '../../../shared/component/menu.item';
+import { HotmotItem } from '../../../shared/component/hotmot.item';
+import { NgForm } from '@angular/forms';
+import { OrderService } from '../../../shared/service/order.service';
+import { Router } from '@angular/router';
+import { Order } from '../../../shared/service/order';
 
 @Component({
   selector: 'app-hotmot-input',
@@ -14,7 +14,7 @@ import { Order } from "../../../shared/service/order";
 })
 export class HotmotInputComponent implements OnInit {
 
-  pageTitle: string = 'ほっともっと';
+  pageTitle = 'ほっともっと';
 
   dnumbers: NumberItem[];
   dmenus: MenuItem[];
